@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undervisningsressurser</title>
+  <style>
+    :root{
+      --bg:#f7f5fb;
+      --surface:#ffffff;
+      --text:#211a2f;
+      --muted:#6f667c;
+      --border:#e7e0ee;
+      --purple:#6f42c1;
+      --purple-dark:#4b2a87;
+      --purple-soft:#efe7fb;
+      --shadow:0 12px 30px rgba(61,38,86,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:linear-gradient(180deg,#f4effb 0,#faf9fc 280px,#f7f5fb 100%);
+      color:var(--text);
+    }
+    .hero{
+      padding:64px 20px 38px;
+      text-align:center;
+    }
+    .hero-badge{
+      display:inline-block;
+      padding:7px 13px;
+      border-radius:999px;
+      background:var(--purple-soft);
+      color:var(--purple-dark);
+      font-weight:700;
+      font-size:.88rem;
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0;
+      font-size:clamp(2rem,5vw,3.4rem);
+      letter-spacing:-.03em;
+    }
+    .hero p{
+      max-width:720px;
+      margin:16px auto 0;
+      color:var(--muted);
+      font-size:1.05rem;
+      line-height:1.6;
+    }
+    .wrap{
+      width:min(1120px,calc(100% - 32px));
+      margin:0 auto 60px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:20px;
+    }
+    .subject{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .subject button.subject-head{
+      width:100%;
+      border:0;
+      background:transparent;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:22px;
+      cursor:pointer;
+      text-align:left;
+      color:inherit;
+    }
+    .subject-title{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .icon{
+      width:46px;height:46px;
+      border-radius:14px;
+      display:grid;place-items:center;
+      font-size:1.5rem;
+      background:var(--purple-soft);
+    }
+    .subject h2{
+      margin:0;
+      font-size:1.18rem;
+    }
+    .subject small{
+      display:block;
+      color:var(--muted);
+      margin-top:3px;
+    }
+    .chev{
+      font-size:1.25rem;
+      color:var(--purple-dark);
+      transition:.25s;
+    }
+    .subject.open .chev{transform:rotate(180deg)}
+    .modules{
+      display:none;
+      padding:0 22px 22px;
+    }
+    .subject.open .modules{display:block}
+    .module-grid{
+      display:grid;
+      gap:10px;
+    }
+    .module{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:13px 15px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fbfafe;
+      text-decoration:none;
+      color:var(--text);
+      transition:.18s;
+    }
+    .module:hover{
+      transform:translateY(-1px);
+      border-color:#cdb7ef;
+      background:#f7f1ff;
+    }
+    .module .meta{
+      color:var(--muted);
+      font-size:.84rem;
+      margin-top:2px;
+    }
+    .module .arrow{
+      color:var(--purple);
+      font-weight:800;
+    }
+    .module.disabled{
+      opacity:.58;
+      cursor:default;
+      pointer-events:none;
+    }
+    .pill{
+      font-size:.74rem;
+      font-weight:700;
+      color:var(--purple-dark);
+      background:var(--purple-soft);
+      padding:4px 8px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .footer-note{
+      margin-top:28px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    @media(max-width:760px){
+      .grid{grid-template-columns:1fr}
+      .hero{padding-top:44px}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-badge">Undervisningsressurser</div>
+    <h1>Velg fag og modul</h1>
+    <p>Her finner du begrepsbanker, oppgaver, quizer og andre ressurser.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+
+      <article class="subject open">
+        <button class="subject-head" aria-expanded="true">
+          <div class="subject-title">
+            <div class="icon">📊</div>
+            <div>
+              <h2>Markedsføring og ledelse 2</h2>
+              <small>Analyse, strategi og faglig arbeid</small>
+            </div>
+          </div>
+          <div class="chev">⌄</div>
+        </button>
+        <div class="modules">
+          <div class="module-grid">
+            <a class="module" href="https://lisaepp.github.io/Markedsf-ring-begreper-situasjons-og-bransjeanalyse/">
+              <div>
+                <strong>Situasjons- og bransjeanalyse</strong>
+                <div class="meta">Begrepsbank, flipcards og test deg selv</div>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+            <div class="module disabled">
+              <div><strong>Strategi</strong><div class="meta">Kommer senere</div></div>
+              <span class="pill">Kommer</span>
+            </div>
+            <div class="module disabled">
+              <div><strong>Merkevare og posisjonering</strong><div class="meta">Kommer senere</div></div>
+              <span class="pill">Kommer</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="subject open">
+        <button class="subject-head" aria-expanded="true">
+          <div class="subject-title">
+            <div class="icon">🌍</div>
+            <div>
+              <h2>Samfunnsfag</h2>
+              <small>Samfunn, identitet og aktuelle temaer</small>
+            </div>
+          </div>
+          <div class="chev">⌄</div>
+        </button>
+        <div class="modules">
+          <div class="module-grid">
+            <a class="module" href="https://lisaepp.github.io/Samfunnsfag-begreper-1-og-2/">
+              <div>
+                <strong>Samfunn og sosialisering</strong>
+                <div class="meta">Begreper del 1 og 2</div>
+              </div>
+              <span class="arrow">→</span>
+            </a>
+            <div class="module disabled">
+              <div><strong>Sosial ulikhet og utenforskap</strong><div class="meta">Kommer senere</div></div>
+              <span class="pill">Kommer</span>
+            </div>
+            <div class="module disabled">
+              <div><strong>Arbeidsliv og samfunnsmodell</strong><div class="meta">Kommer senere</div></div>
+              <span class="pill">Kommer</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="subject">
+        <button class="subject-head" aria-expanded="false">
+          <div class="subject-title">
+            <div class="icon">⚖️</div>
+            <div>
+              <h2>Rettslære 1</h2>
+              <small>Juridisk metode og rettsområder</small>
+            </div>
+          </div>
+          <div class="chev">⌄</div>
+        </button>
+        <div class="modules">
+          <div class="module-grid">
+            <div class="module disabled"><div><strong>Juridisk metode</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+            <div class="module disabled"><div><strong>Avtaler og kjøp</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+            <div class="module disabled"><div><strong>Familie og arv</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="subject">
+        <button class="subject-head" aria-expanded="false">
+          <div class="subject-title">
+            <div class="icon">⚖️</div>
+            <div>
+              <h2>Rettslære 2</h2>
+              <small>Rett, personvern og arbeidsliv</small>
+            </div>
+          </div>
+          <div class="chev">⌄</div>
+        </button>
+        <div class="modules">
+          <div class="module-grid">
+            <div class="module disabled"><div><strong>Personvern og menneskerettigheter</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+            <div class="module disabled"><div><strong>Strafferett</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+            <div class="module disabled"><div><strong>Arbeidsrett</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="subject">
+        <button class="subject-head" aria-expanded="false">
+          <div class="subject-title">
+            <div class="icon">🇩🇪</div>
+            <div>
+              <h2>Tysk 1</h2>
+              <small>Ordforråd, grammatikk og kultur</small>
+            </div>
+          </div>
+          <div class="chev">⌄</div>
+        </button>
+        <div class="modules">
+          <div class="module-grid">
+            <div class="module disabled"><div><strong>Grammatikk</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+            <div class="module disabled"><div><strong>Typisch deutsch?</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+            <div class="module disabled"><div><strong>Geografi</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="subject">
+        <button class="subject-head" aria-expanded="false">
+          <div class="subject-title">
+            <div class="icon">🇩🇪</div>
+            <div>
+              <h2>Tysk 2</h2>
+              <small>Språk, samfunn og fordypning</small>
+            </div>
+          </div>
+          <div class="chev">⌄</div>
+        </button>
+        <div class="modules">
+          <div class="module-grid">
+            <div class="module disabled"><div><strong>Samfunn og politikk</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+            <div class="module disabled"><div><strong>Muntlig trening</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+            <div class="module disabled"><div><strong>Skriftlig språk</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <script>
+    document.querySelectorAll('.subject-head').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const card=btn.closest('.subject');
+        const open=card.classList.toggle('open');
+        btn.setAttribute('aria-expanded',open ? 'true' : 'false');
+      });
+    });
+  </script>
+</body>
+</html>
