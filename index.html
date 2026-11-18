@@ -17,390 +17,155 @@
       --shadow:0 12px 30px rgba(61,38,86,.10);
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:linear-gradient(180deg,#f4effb 0,#faf9fc 280px,#f7f5fb 100%);
-      color:var(--text);
-    }
-    .hero{
-      padding:64px 20px 38px;
-      text-align:center;
-    }
-    .hero-badge{
-      display:inline-block;
-      padding:7px 13px;
-      border-radius:999px;
-      background:var(--purple-soft);
-      color:var(--purple-dark);
-      font-weight:700;
-      font-size:.88rem;
-      margin-bottom:16px;
-    }
-    h1{
-      margin:0;
-      font-size:clamp(2rem,5vw,3.4rem);
-      letter-spacing:-.03em;
-    }
-    .hero p{
-      max-width:720px;
-      margin:16px auto 0;
-      color:var(--muted);
-      font-size:1.05rem;
-      line-height:1.6;
-    }
-    .wrap{
-      width:min(1120px,calc(100% - 32px));
-      margin:0 auto 60px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:20px;
-    }
-    .subject{
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .subject button.subject-head{
-      width:100%;
-      border:0;
-      background:transparent;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:22px;
-      cursor:pointer;
-      text-align:left;
-      color:inherit;
-    }
-    .subject-title{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-    .icon{
-      width:46px;height:46px;
-      border-radius:14px;
-      display:grid;place-items:center;
-      font-size:1.5rem;
-      background:var(--purple-soft);
-    }
-    .subject h2{
-      margin:0;
-      font-size:1.18rem;
-    }
-    .subject small{
-      display:block;
-      color:var(--muted);
-      margin-top:3px;
-    }
-    .chev{
-      font-size:1.25rem;
-      color:var(--purple-dark);
-      transition:.25s;
-    }
+    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#f4effb 0,#faf9fc 280px,#f7f5fb 100%);color:var(--text)}
+    .hero{padding:64px 20px 38px;text-align:center}
+    .hero-badge{display:inline-block;padding:7px 13px;border-radius:999px;background:var(--purple-soft);color:var(--purple-dark);font-weight:700;font-size:.88rem;margin-bottom:16px}
+    h1{margin:0;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.03em}
+    .hero p{max-width:720px;margin:16px auto 0;color:var(--muted);font-size:1.05rem;line-height:1.6}
+    .wrap{width:min(1120px,calc(100% - 32px));margin:0 auto 60px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+    .subject{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+    .subject button.subject-head{width:100%;border:0;background:transparent;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px;cursor:pointer;text-align:left;color:inherit}
+    .subject-title{display:flex;align-items:center;gap:14px}
+    .icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:var(--purple-soft)}
+    .subject h2{margin:0;font-size:1.18rem}
+    .subject small{display:block;color:var(--muted);margin-top:3px}
+    .chev{font-size:1.25rem;color:var(--purple-dark);transition:.25s}
     .subject.open .chev{transform:rotate(180deg)}
-    .modules{
-      display:none;
-      padding:0 22px 22px;
-    }
+    .modules{display:none;padding:0 22px 22px}
     .subject.open .modules{display:block}
-    .module-grid{
-      display:grid;
-      gap:10px;
-    }
-    .module{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:13px 15px;
-      border:1px solid var(--border);
-      border-radius:14px;
-      background:#fbfafe;
-      text-decoration:none;
-      color:var(--text);
-      transition:.18s;
-    }
-    .module:hover{
-      transform:translateY(-1px);
-      border-color:#cdb7ef;
-      background:#f7f1ff;
-    }
-    .module .meta{
-      color:var(--muted);
-      font-size:.84rem;
-      margin-top:2px;
-    }
-    .module .arrow{
-      color:var(--purple);
-      font-weight:800;
-    }
-    .module.disabled{
-      opacity:.58;
-      cursor:default;
-      pointer-events:none;
-    }
-    .pill{
-      font-size:.74rem;
-      font-weight:700;
-      color:var(--purple-dark);
-      background:var(--purple-soft);
-      padding:4px 8px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
-    .footer-note{
-      margin-top:28px;
-      text-align:center;
-      color:var(--muted);
-      font-size:.92rem;
-    }
-    @media(max-width:760px){
-      .grid{grid-template-columns:1fr}
-      .hero{padding-top:44px}
-    }
+    .module-grid{display:grid;gap:10px}
+    .module{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;border:1px solid var(--border);border-radius:14px;background:#fbfafe;text-decoration:none;color:var(--text);transition:.18s}
+    a.module:hover{transform:translateY(-1px);border-color:#cdb7ef;background:#f7f1ff}
+    .module .meta{color:var(--muted);font-size:.84rem;margin-top:2px}
+    .module .arrow{color:var(--purple);font-weight:800}
+    .module.disabled{opacity:.58;cursor:default;pointer-events:none}
+    .pill{font-size:.74rem;font-weight:700;color:var(--purple-dark);background:var(--purple-soft);padding:4px 8px;border-radius:999px;white-space:nowrap}
+    .footer-note{margin-top:28px;text-align:center;color:var(--muted);font-size:.92rem}
+    /* Rettslære 2: hvert rettsområde er en nedtrekkbar mappe. */
+    .law-area{border:1px solid var(--border);border-radius:15px;background:#fbfafe;overflow:hidden}
+    .law-area summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px;cursor:pointer;font-weight:700;user-select:none}
+    .law-area summary::-webkit-details-marker{display:none}
+    .law-area summary:focus-visible{outline:3px solid #b99ded;outline-offset:-3px}
+    .law-area summary:hover{background:#f7f1ff}
+    .law-area summary .law-label{display:flex;align-items:center;gap:10px}
+    .law-area summary .law-symbol{font-size:1.16rem}
+    .law-area summary .law-chevron{font-size:1.1rem;color:var(--purple);transition:transform .2s ease}
+    .law-area[open] summary .law-chevron{transform:rotate(180deg)}
+    .law-area[open]{background:white;border-color:#d2bbed}
+    .law-content{padding:2px 12px 13px;display:grid;gap:9px}
+    .law-content .module{background:#fff;margin:0}
+    .law-empty{color:var(--muted);background:#f8f6fb;border:1px dashed #d9cde7;border-radius:12px;padding:13px;font-size:.88rem;line-height:1.5}
+    .law-heading{color:var(--muted);font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;padding:3px 2px 0}
+    .module-type{display:inline-block;font-size:.75rem;color:var(--purple-dark);font-weight:700;margin-bottom:3px}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}.hero{padding-top:44px}}
   </style>
 </head>
 <body>
-
   <header class="hero">
     <div class="hero-badge">Undervisningsressurser</div>
     <h1>Velg fag og modul</h1>
     <p>Her finner du begrepsbanker, oppgaver, quizer og andre ressurser.</p>
   </header>
-
   <main class="wrap">
     <section class="grid">
 
       <article class="subject open">
         <button class="subject-head" aria-expanded="true">
-          <div class="subject-title">
-            <div class="icon">📊</div>
-            <div>
-              <h2>Markedsføring og ledelse 2</h2>
-              <small>Analyse, strategi og faglig arbeid</small>
-            </div>
-          </div>
-          <div class="chev">⌄</div>
+          <div class="subject-title"><div class="icon">📊</div><div><h2>Markedsføring og ledelse 2</h2><small>Analyse, strategi og faglig arbeid</small></div></div><div class="chev">⌄</div>
         </button>
-        <div class="modules">
-          <div class="module-grid">
-            <a class="module" href="https://lisaepp.github.io/Markedsf-ring-begreper-situasjons-og-bransjeanalyse/">
-              <div>
-                <strong>Situasjons- og bransjeanalyse</strong>
-                <div class="meta">Begrepsbank, flipcards og test deg selv</div>
-              </div>
-              <span class="arrow">→</span>
-            </a>
-            
-<a class="module" href="distribusjonsstrategier.html">
-  <div>
-    <strong>Distribusjonsstrategier</strong>
-    <div class="meta">Interaktiv læringssti – distribusjonsvalg, verdikjede, makt og avhengighet</div>
-  </div>
-  <span class="arrow">→</span>
-</a>
-
-            <div class="module disabled">
-              <div><strong>Merkevare og posisjonering</strong><div class="meta">Kommer senere</div></div>
-              <span class="pill">Kommer</span>
-            </div>
-          </div>
-        </div>
+        <div class="modules"><div class="module-grid">
+          <a class="module" href="https://lisaepp.github.io/Markedsf-ring-begreper-situasjons-og-bransjeanalyse/"><div><strong>Situasjons- og bransjeanalyse</strong><div class="meta">Begrepsbank, flipcards og test deg selv</div></div><span class="arrow">→</span></a>
+          <a class="module" href="distribusjonsstrategier.html"><div><strong>Distribusjonsstrategier</strong><div class="meta">Interaktiv læringssti – distribusjonsvalg, verdikjede, makt og avhengighet</div></div><span class="arrow">→</span></a>
+          <div class="module disabled"><div><strong>Merkevare og posisjonering</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+        </div></div>
       </article>
 
       <article class="subject open">
         <button class="subject-head" aria-expanded="true">
-          <div class="subject-title">
-            <div class="icon">🌍</div>
-            <div>
-              <h2>Samfunnsfag</h2>
-              <small>Samfunn, identitet og aktuelle temaer</small>
-            </div>
-          </div>
-          <div class="chev">⌄</div>
+          <div class="subject-title"><div class="icon">🌍</div><div><h2>Samfunnsfag</h2><small>Samfunn, identitet og aktuelle temaer</small></div></div><div class="chev">⌄</div>
+        </button>
+        <div class="modules"><div class="module-grid">
+          <a class="module" href="https://lisaepp.github.io/Samfunnsfag-begreper-1-og-2/"><div><strong>Samfunn og sosialisering</strong><div class="meta">Begreper del 1 og 2</div></div><span class="arrow">→</span></a>
+          <a class="module" href="begrepsbank_personlig_okonomi.html"><div><strong>Personlig økonomi – Begrepsbank</strong><div class="meta">Flipcards, forklaringer og egentest</div></div><span class="arrow">→</span></a>
+          <a class="module" href="laeringssti_personlig_okonomi.html"><div><strong>Personlig økonomi – Læringssti</strong><div class="meta">Oppgaver, øving og innlevering</div></div><span class="arrow">→</span></a>
+          <a class="module" href="vurderingsoppgaversamfunnpersonligøkonomi.html"><div><strong>Samfunnsfag – Muntlig vurdering</strong><div class="meta">Sosialisering og personlig økonomi – øvingsoppgaver og PDF-innlevering</div></div><span class="arrow">→</span></a>
+          <div class="module disabled"><div><strong>Sosial ulikhet og utenforskap</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          <div class="module disabled"><div><strong>Arbeidsliv og samfunnsmodell</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+        </div></div>
+      </article>
+
+      <article class="subject">
+        <button class="subject-head" aria-expanded="false">
+          <div class="subject-title"><div class="icon">⚖️</div><div><h2>Rettslære 1</h2><small>Juridisk metode og rettsområder</small></div></div><div class="chev">⌄</div>
+        </button>
+        <div class="modules"><div class="module-grid">
+          <div class="module disabled"><div><strong>Juridisk metode</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          <div class="module disabled"><div><strong>Avtaler og kjøp</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          <a class="module" href="https://lisaepp.github.io/rettsl-re-1/Ekteskapsloven.html"><div><strong>Ekteskap og familie</strong><div class="meta">Begrepsbank og flipcards</div></div><span class="arrow">→</span></a>
+        </div></div>
+      </article>
+
+      <article class="subject" id="rettslaere2">
+        <button class="subject-head" aria-expanded="false">
+          <div class="subject-title"><div class="icon">⚖️</div><div><h2>Rettslære 2</h2><small>Velg rettsområde, deretter aktivitet</small></div></div><div class="chev">⌄</div>
         </button>
         <div class="modules">
           <div class="module-grid">
-            <a class="module" href="https://lisaepp.github.io/Samfunnsfag-begreper-1-og-2/">
-              <div>
-                <strong>Samfunn og sosialisering</strong>
-                <div class="meta">Begreper del 1 og 2</div>
+            <details class="law-area">
+              <summary><span class="law-label"><span class="law-symbol">⚖️</span> Strafferett</span><span class="law-chevron">⌄</span></summary>
+              <div class="law-content">
+                <a class="module" href="laeringssti_strafferett.html"><div><span class="module-type">Læringssti / øvinger</span><div><strong>Strafferett – begreper og lovbruk</strong></div><div class="meta">Begreper, lovsøk, rettspraksis og juridisk drøftelse</div></div><span class="arrow">→</span></a>
+                <a class="module" href="laeringssti_juridisk_metode_med_domssamling.html"><div><span class="module-type">Skriveoppgaver og PDF</span><div><strong>Juridisk metode – anførsler og drøfting</strong></div><div class="meta">Lovsamling, domssamling, juridiske caser og innlevering</div></div><span class="arrow">→</span></a>
               </div>
-              <span class="arrow">→</span>
-            </a>
-            
-<a class="module" href="begrepsbank_personlig_okonomi.html">
-  <div>
-    <strong>Personlig økonomi – Begrepsbank</strong>
-    <div class="meta">Flipcards, forklaringer og egentest</div>
-  </div>
-  <span class="arrow">→</span>
-</a>
-
-<a class="module" href="laeringssti_personlig_okonomi.html">
-  <div>
-    <strong>Personlig økonomi – Læringssti</strong>
-    <div class="meta">Oppgaver, øving og innlevering</div>
-  </div>
-  <span class="arrow">→</span>
-</a>
-
-<a class="module" href="vurderingsoppgaversamfunnpersonligøkonomi.html">
-  <div>
-    <strong>Samfunnsfag – Muntlig vurdering</strong>
-    <div class="meta">Sosialisering og personlig økonomi – øvingsoppgaver og PDF-innlevering</div>
-  </div>
-  <span class="arrow">→</span>
-</a>
-
-            <div class="module disabled">
-              <div><strong>Sosial ulikhet og utenforskap</strong><div class="meta">Kommer senere</div></div>
-              <span class="pill">Kommer</span>
-            </div>
-            <div class="module disabled">
-              <div><strong>Arbeidsliv og samfunnsmodell</strong><div class="meta">Kommer senere</div></div>
-              <span class="pill">Kommer</span>
-            </div>
+            </details>
+            <details class="law-area">
+              <summary><span class="law-label"><span class="law-symbol">🧾</span> Erstatningsrett</span><span class="law-chevron">⌄</span></summary>
+              <div class="law-content"><div class="law-empty">Her kan du senere legge inn flipcards, skriveoppgaver og caser om erstatningsansvar. Ingen aktivitetsfiler er koblet til ennå.</div></div>
+            </details>
+            <details class="law-area">
+              <summary><span class="law-label"><span class="law-symbol">🔒</span> Personvern og menneskerettigheter</span><span class="law-chevron">⌄</span></summary>
+              <div class="law-content">
+                <a class="module" href="rettslære2/personvern/flipcards_personvern.html"><div><span class="module-type">Flipcards</span><div><strong>Personvern og retten til privatliv</strong></div><div class="meta">GDPR, menneskerettigheter og juridisk metode</div></div><span class="arrow">→</span></a>
+              </div>
+            </details>
+            <details class="law-area">
+              <summary><span class="law-label"><span class="law-symbol">🌱</span> Miljørett</span><span class="law-chevron">⌄</span></summary>
+              <div class="law-content">
+                <a class="module" href="rettslære2/miljørett/flipcards_miljorett.html"><div><span class="module-type">Flipcards</span><div><strong>Miljørett og allemannsretten</strong></div><div class="meta">Friluftsloven, forurensning, naturmangfold og dommer</div></div><span class="arrow">→</span></a>
+              </div>
+            </details>
+            <details class="law-area">
+              <summary><span class="law-label"><span class="law-symbol">🏛️</span> Forvaltningsrett</span><span class="law-chevron">⌄</span></summary>
+              <div class="law-content"><div class="law-empty">Her kan du senere legge inn flipcards, skriveoppgaver og caser om saksbehandling, habilitet og enkeltvedtak. Ingen aktivitetsfiler er koblet til ennå.</div></div>
+            </details>
           </div>
         </div>
       </article>
 
       <article class="subject">
         <button class="subject-head" aria-expanded="false">
-          <div class="subject-title">
-            <div class="icon">⚖️</div>
-            <div>
-              <h2>Rettslære 1</h2>
-              <small>Juridisk metode og rettsområder</small>
-            </div>
-          </div>
-          <div class="chev">⌄</div>
+          <div class="subject-title"><div class="icon">🇩🇪</div><div><h2>Tysk 1</h2><small>Ordforråd, grammatikk og kultur</small></div></div><div class="chev">⌄</div>
         </button>
-        <div class="modules">
-          <div class="module-grid">
-            <div class="module disabled"><div><strong>Juridisk metode</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
-            <div class="module disabled"><div><strong>Avtaler og kjøp</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
-<a class="module" href="https://lisaepp.github.io/rettsl-re-1/Ekteskapsloven.html"><div><strong>Ekteskap og familie</strong><div class="meta">Begrepsbank og flipcards</div></div><span>→</span></a>          </div>
-        </div>
+        <div class="modules"><div class="module-grid">
+          <div class="module disabled"><div><strong>Grammatikk</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          <div class="module disabled"><div><strong>Typisch deutsch?</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          <div class="module disabled"><div><strong>Geografi</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+        </div></div>
       </article>
 
       <article class="subject">
         <button class="subject-head" aria-expanded="false">
-          <div class="subject-title">
-            <div class="icon">⚖️</div>
-            <div>
-              <h2>Rettslære 2</h2>
-              <small>Rett, personvern og arbeidsliv</small>
-            </div>
-          </div>
-          <div class="chev">⌄</div>
+          <div class="subject-title"><div class="icon">🇩🇪</div><div><h2>Tysk 2</h2><small>Språk, samfunn og fordypning</small></div></div><div class="chev">⌄</div>
         </button>
-        <div class="modules">
-          <div class="module-grid">
-<a class="module" href="rettslære2/personvern/flipcards_personvern.html">
-  <div>
-    <strong>Personvern og retten til privatliv</strong>
-    <div class="meta">Flipcards – GDPR, menneskerettigheter og juridisk metode</div>
-  </div>
-  <span class="arrow">→</span>
-</a>
-            
-
-<a class="module" href="rettslære2/miljørett/flipcards_miljorett.html">
-  <div>
-    <strong>Miljørett og allemannsretten</strong>
-    <div class="meta">Flipcards – friluftsloven, forurensning, naturmangfold og dommer</div>
-  </div>
-  <span class="arrow">→</span>
-</a>
-            
-            
-            
-            
-
-<a class="module" href="laeringssti_juridisk_metode_med_domssamling.html">
-  <div>
-    <strong>Juridisk metode – Anførsler og drøfting</strong>
-    <div class="meta">
-      Læringssti med lovsamling, domssamling,
-      juridiske caser og PDF-innlevering
-    </div>
-  </div>
-  <span class="arrow">→</span>
-</a>
-
-            
-<a class="module" href="laeringssti_strafferett.html">
-  <div>
-    <strong>Strafferett</strong>
-    <div class="meta">Interaktiv læringssti – begreper,
-    lovsøk, rettspraksis og juridisk drøftelse</div>
-  </div>
-  <span class="arrow">→</span>
-</a>
-  
-            <div class="module disabled"><div><strong>Arbeidsrett</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
-          </div>
-        </div>
+        <div class="modules"><div class="module-grid">
+          <a class="module" href="jugendproteste_læringssti.html"><div><strong>Jugendproteste – Tagesschau</strong><div class="meta">Tysk 2 · Lytteforståelse og politikk</div></div><span class="pill">Åpne →</span></a>
+          <div class="module disabled"><div><strong>Muntlig trening</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+          <div class="module disabled"><div><strong>Skriftlig språk</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
+        </div></div>
       </article>
-
-      <article class="subject">
-        <button class="subject-head" aria-expanded="false">
-          <div class="subject-title">
-            <div class="icon">🇩🇪</div>
-            <div>
-              <h2>Tysk 1</h2>
-              <small>Ordforråd, grammatikk og kultur</small>
-            </div>
-          </div>
-          <div class="chev">⌄</div>
-        </button>
-        <div class="modules">
-          <div class="module-grid">
-            <div class="module disabled"><div><strong>Grammatikk</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
-            <div class="module disabled"><div><strong>Typisch deutsch?</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
-            <div class="module disabled"><div><strong>Geografi</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="subject">
-        <button class="subject-head" aria-expanded="false">
-          <div class="subject-title">
-            <div class="icon">🇩🇪</div>
-            <div>
-              <h2>Tysk 2</h2>
-              <small>Språk, samfunn og fordypning</small>
-            </div>
-          </div>
-          <div class="chev">⌄</div>
-        </button>
-        <div class="modules">
-          <div class="module-grid">
-          <a class="module" href="jugendproteste_læringssti.html">
-  <div>
-    <strong>Jugendproteste – Tagesschau</strong>
-    <div class="meta">Tysk 2 · Lytteforståelse og politikk</div>
-  </div>
-  <span class="pill">Åpne →</span>
-</a>
-            <div class="module disabled"><div><strong>Muntlig trening</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
-            <div class="module disabled"><div><strong>Skriftlig språk</strong><div class="meta">Kommer senere</div></div><span class="pill">Kommer</span></div>
-          </div>
-        </div>
-      </article>
-
     </section>
-
   </main>
-
   <script>
     document.querySelectorAll('.subject-head').forEach(btn=>{
       btn.addEventListener('click',()=>{
